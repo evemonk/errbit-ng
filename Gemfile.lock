@@ -498,10 +498,8 @@ GEM
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     underscore-rails (1.8.3)
-    unf (0.1.4)
-      unf_ext
-    unf (0.1.4-java)
-    unf_ext (0.0.8.2)
+    unf (0.2.0)
+    unf (0.2.0-java)
     unicode-display_width (2.6.0)
     useragent (0.16.10)
     warden (1.2.9)
@@ -790,9 +788,8 @@ CHECKSUMS
   tzinfo (2.0.6) sha256=8daf828cc77bcf7d63b0e3bdb6caa47e2272dcfaf4fbfe46f8c3a9df087a829b
   uglifier (4.2.0) sha256=ae68f286bf78a23938f8ff2b8d3cab4aa3d65228c1006476da7023e3ff3af071
   underscore-rails (1.8.3) sha256=d37d0a297df9078a27e00df6bfa3f3b110eb27dd8f84c1588a9727a2cfbada47
-  unf (0.1.4) sha256=4999517a531f2a955750f8831941891f6158498ec9b6cb1c81ce89388e63022e
-  unf (0.1.4-java) sha256=49a5972ec0b3d091d3b0b2e00113f2f342b9b212f0db855eb30a629637f6d302
-  unf_ext (0.0.8.2) sha256=90b9623ee359cc4878461c5d2eab7d3d3ce5801a680a9e7ac83b8040c5b742fa
+  unf (0.2.0) sha256=e6bcc2e101d80e3f9459753db747d5926aada1aaaf61e629e93359da9a5b04ab
+  unf (0.2.0-java) sha256=fd0b230a5251a2df65dae92d872b13a18d28276c35f20e41e7a303d32a1bb90d
   unicode-display_width (2.6.0) sha256=12279874bba6d5e4d2728cef814b19197dbb10d7a7837a869bab65da943b7f5a
   useragent (0.16.10) sha256=1794380d9ea5c087d687bbfe14752f81839293f238c1132ef05c9344f09e65bb
   warden (1.2.9) sha256=46684f885d35a69dbb883deabf85a222c8e427a957804719e143005df7a1efd0
