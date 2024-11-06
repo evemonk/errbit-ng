@@ -1,4 +1,6 @@
-describe IssueTrackerFieldDecorator do
+require "rails_helper"
+
+RSpec.describe IssueTrackerFieldDecorator do
   describe "#label" do
     it 'return the label of field_info by default' do
       expect(IssueTrackerFieldDecorator.new(:foo, label: 'hello').label).to eq 'hello'

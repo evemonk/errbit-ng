@@ -1,4 +1,6 @@
-describe WatcherDecorator do
+require "rails_helper"
+
+RSpec.describe WatcherDecorator do
   describe "#email_choosen" do
     context "with email define" do
       it 'return blank' do

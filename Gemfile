@@ -50,12 +50,12 @@ gem 'json'
 
 gem 'pry-rails'
 
-# Ruby 3.1 + Rails 6.0
+# Ruby 3.1 + Rails 6.1
 gem "net-smtp"
 gem "rexml"
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   gem 'airbrake', '~> 4.3.5', require: false
@@ -65,7 +65,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'listen', '~> 3.0.5'
+  gem 'listen', '~> 3.3'
 end
 
 group :test do

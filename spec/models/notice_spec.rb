@@ -1,4 +1,6 @@
-describe Notice, type: 'model' do
+require "rails_helper"
+
+RSpec.describe Notice do
   context 'validations' do
     it 'requires a backtrace' do
       notice = Fabricate.build(:notice, backtrace: nil)
