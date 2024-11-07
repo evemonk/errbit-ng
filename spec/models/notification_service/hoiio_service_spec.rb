@@ -1,6 +1,5 @@
 RSpec.describe NotificationServices::HoiioService do
   it "it should send a notification to hoiio" do
-    # setup
     notice = Fabricate :notice
     notification_service = Fabricate :hoiio_notification_service, app: notice.app
     problem = notice.problem

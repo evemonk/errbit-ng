@@ -1,6 +1,5 @@
 RSpec.describe NotificationServices::CampfireService do
   it "it should send a notification to campfire" do
-    # setup
     notice = Fabricate :notice
     notification_service = Fabricate :campfire_notification_service, app: notice.app
     problem = notice.problem
