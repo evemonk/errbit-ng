@@ -4,18 +4,16 @@ ENV["RAILS_ENV"] = 'test'
 ENV["ERRBIT_LOG_LEVEL"] = 'fatal'
 ENV["ERRBIT_USER_HAS_USERNAME"] = 'false'
 
-if ENV['COVERAGE']
-  require 'simplecov'
+require 'simplecov'
 
-  SimpleCov.start "rails" do
-    enable_coverage :branch
-    primary_coverage :branch
-    # https://github.com/simplecov-ruby/simplecov/issues/1057
-    # enable_coverage_for_eval
+SimpleCov.start "rails" do
+  enable_coverage :branch
+  primary_coverage :branch
+  # https://github.com/simplecov-ruby/simplecov/issues/1057
+  # enable_coverage_for_eval
 
-    add_group "Decorators", "app/decorators"
-    add_group "Views", "app/views"
-  end
+  add_group "Decorators", "app/decorators"
+  add_group "Interactors", "app/interactors"
 end
 
 require File.expand_path("../../config/environment", __FILE__)
