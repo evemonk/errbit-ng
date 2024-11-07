@@ -5,17 +5,16 @@ ENV["ERRBIT_LOG_LEVEL"] = 'fatal'
 ENV["ERRBIT_USER_HAS_USERNAME"] = 'false'
 
 if ENV['COVERAGE']
-  require 'coveralls'
   require 'simplecov'
-  Coveralls.wear!('rails') do
-    add_filter 'bundle'
-  end
-  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-    SimpleCov::Formatter::HTMLFormatter,
-    Coveralls::SimpleCov::Formatter
-  ])
-  SimpleCov.start('rails') do
-    add_filter 'bundle'
+
+  SimpleCov.start "rails" do
+    enable_coverage :branch
+    primary_coverage :branch
+    # https://github.com/simplecov-ruby/simplecov/issues/1057
+    # enable_coverage_for_eval
+
+    add_group "Decorators", "app/decorators"
+    add_group "Views", "app/views"
   end
 end
 
