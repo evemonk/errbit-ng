@@ -520,7 +520,7 @@ DEPENDENCIES
   actionmailer_inline_css
   activemodel-serializers-xml
   airbrake (~> 4.3.5)
-  bootsnap (>= 1.1.0)
+  bootsnap (>= 1.4.4)
   campy
   capybara
   decent_exposure

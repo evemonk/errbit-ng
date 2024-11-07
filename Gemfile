@@ -57,7 +57,7 @@ gem "net-imap"
 gem "rexml"
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   gem 'airbrake', '~> 4.3.5', require: false
