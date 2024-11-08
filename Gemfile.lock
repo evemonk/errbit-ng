@@ -81,6 +81,7 @@ GEM
       builder
       multi_json
     ast (2.4.2)
+    base64 (0.2.0)
     bcrypt (3.1.20)
     bcrypt (3.1.20-java)
     bigdecimal (3.1.8)
@@ -142,7 +143,7 @@ GEM
     erubi (1.13.0)
     execjs (2.8.1)
     fabrication (2.30.0)
-    faraday (1.10.1)
+    faraday (1.10.4)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
@@ -160,7 +161,7 @@ GEM
     faraday-httpclient (1.0.1)
     faraday-multipart (1.0.4)
       multipart-post (~> 2)
-    faraday-net_http (1.0.1)
+    faraday-net_http (1.0.2)
     faraday-net_http_persistent (1.2.0)
     faraday-patron (1.0.0)
     faraday-rack (1.0.0)
@@ -200,7 +201,8 @@ GEM
       thor (>= 0.14, < 2.0)
     json (2.8.1)
     json (2.8.1-java)
-    jwt (2.5.0)
+    jwt (2.9.3)
+      base64
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.2)
@@ -261,7 +263,7 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.7.1)
       bigdecimal (~> 3.1)
-    multipart-post (2.2.3)
+    multipart-post (2.4.1)
     net-imap (0.5.0)
       date
       net-protocol
@@ -285,12 +287,13 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
-    oauth2 (1.4.10)
+    oauth2 (2.0.9)
       faraday (>= 0.17.3, < 3.0)
       jwt (>= 1.0, < 3.0)
-      multi_json (~> 1.3)
       multi_xml (~> 0.5)
-      rack (>= 1.2, < 3)
+      rack (>= 1.2, < 4)
+      snaky_hash (~> 2.0)
+      version_gem (~> 1.1)
     octokit (4.21.0)
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
@@ -298,17 +301,17 @@ GEM
       hashie (>= 3.4.6)
       rack (>= 2.2.3)
       rack-protection
-    omniauth-github (2.0.0)
+    omniauth-github (2.0.1)
       omniauth (~> 2.0)
-      omniauth-oauth2 (~> 1.7.1)
-    omniauth-google-oauth2 (1.0.1)
-      jwt (>= 2.0)
-      oauth2 (~> 1.1)
+      omniauth-oauth2 (~> 1.8)
+    omniauth-google-oauth2 (1.2.0)
+      jwt (>= 2.9)
+      oauth2 (~> 2.0)
       omniauth (~> 2.0)
-      omniauth-oauth2 (~> 1.7.1)
-    omniauth-oauth2 (1.7.3)
+      omniauth-oauth2 (~> 1.8)
+    omniauth-oauth2 (1.8.0)
       oauth2 (>= 1.4, < 3)
-      omniauth (>= 1.9, < 3)
+      omniauth (~> 2.0)
     omniauth-rails_csrf_protection (1.0.2)
       actionpack (>= 4.2)
       omniauth (~> 2.0)
@@ -473,6 +476,9 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.13.1)
     simplecov_json_formatter (0.1.4)
+    snaky_hash (2.0.1)
+      hashie
+      version_gem (~> 1.1, >= 1.1.1)
     spoon (0.0.6)
       ffi
     sprockets (4.1.1)
@@ -496,6 +502,7 @@ GEM
     underscore-rails (1.8.3)
     unicode-display_width (2.6.0)
     useragent (0.16.10)
+    version_gem (1.1.4)
     warden (1.2.9)
       rack (>= 2.0.9)
     websocket-driver (0.7.6)
@@ -600,6 +607,7 @@ CHECKSUMS
   addressable (2.8.7) sha256=462986537cf3735ab5f3c0f557f14155d778f4b43ea4f485a9deb9c8f7c58232
   airbrake (4.3.8) sha256=d06947194f5dcd7e192c28067f2c47728511d75326c17045094c3a0b84f68c2d
   ast (2.4.2) sha256=1e280232e6a33754cde542bc5ef85520b74db2aac73ec14acef453784447cc12
+  base64 (0.2.0) sha256=0f25e9b21a02a0cc0cea8ef92b2041035d39350946e8789c562b2d1a3da01507
   bcrypt (3.1.20) sha256=8410f8c7b3ed54a3c00cd2456bf13917d695117f033218e2483b2e40b0784099
   bcrypt (3.1.20-java) sha256=8236dff31f6f36cffe334939e4ea59c41e1c94e2e246c01783575fa6df40373f
   bigdecimal (3.1.8) sha256=a89467ed5a44f8ae01824af49cbc575871fa078332e8f77ea425725c1ffe27be
@@ -632,13 +640,13 @@ CHECKSUMS
   erubi (1.13.0) sha256=fca61b47daefd865d0fb50d168634f27ad40181867445badf6427c459c33cd62
   execjs (2.8.1) sha256=6d939919cfd81bcc4d6556f322c3995a70cfe4289ea0bd3b1f999b489c323088
   fabrication (2.30.0) sha256=b838236df6fc45bf806a3bb4ce78546d5a925f28879ffd05fe90277265d5ba2f
-  faraday (1.10.1) sha256=38e5d43359ad0e8579af549fcc6083c03ffbeb0dd6fd78dee359263fde2cfc0c
+  faraday (1.10.4) sha256=a384c541cde688d68bf85055723aecb4100c3fa41b53beb2011b245960ab2f19
   faraday-em_http (1.0.0) sha256=7a3d4c7079789121054f57e08cd4ef7e40ad1549b63101f38c7093a9d6c59689
   faraday-em_synchrony (1.0.0) sha256=460dad1c30cc692d6e77d4c391ccadb4eca4854b315632cd7e560f74275cf9ed
   faraday-excon (1.1.0) sha256=b055c842376734d7f74350fe8611542ae2000c5387348d9ba9708109d6e40940
   faraday-httpclient (1.0.1) sha256=4c8ff1f0973ff835be8d043ef16aaf54f47f25b7578f6d916deee8399a04d33b
   faraday-multipart (1.0.4) sha256=9012021ab57790f7d712f590b48d5f948b19b43cfa11ca83e6459f06090b0725
-  faraday-net_http (1.0.1) sha256=3245ce406ebb77b40e17a77bfa66191dda04be2fd4e13a78d8a4305854d328ba
+  faraday-net_http (1.0.2) sha256=63992efea42c925a20818cf3c0830947948541fdcf345842755510d266e4c682
   faraday-net_http_persistent (1.2.0) sha256=0b0cbc8f03dab943c3e1cc58d8b7beb142d9df068b39c718cd83e39260348335
   faraday-patron (1.0.0) sha256=dc2cd7b340bb3cc8e36bcb9e6e7eff43d134b6d526d5f3429c7a7680ddd38fa7
   faraday-rack (1.0.0) sha256=ef60ec969a2bb95b8dbf24400155aee64a00fc8ba6c6a4d3968562bcc92328c0
@@ -663,7 +671,7 @@ CHECKSUMS
   jquery-rails (4.5.0) sha256=a4b89d7c9dbe016921b817f10d459baff928c0e0a656c8a758c20ec281a5ab39
   json (2.8.1) sha256=404e8ca4c2ef6c7a6fa15bb9e2e280f3523334b78a83f22268297fe7939ee22a
   json (2.8.1-java) sha256=6d87e4a83bfb459a05c0a4305e0ec35f9ed5576e73f831b3003f4015bb8cab93
-  jwt (2.5.0) sha256=b835fe55287572e1f65128d6c12d3ff7402bb4652c4565bf3ecdcb974db7954d
+  jwt (2.9.3) sha256=55fd07ccdd64c622d36859748f2290fb9c119ce30b482867504e9f12654d6a65
   kaminari (1.2.2) sha256=c4076ff9adccc6109408333f87b5c4abbda5e39dc464bd4c66d06d9f73442a3e
   kaminari-actionview (1.2.2) sha256=1330f6fc8b59a4a4ef6a549ff8a224797289ebf7a3a503e8c1652535287cc909
   kaminari-activerecord (1.2.2) sha256=0dd3a67bab356a356f36b3b7236bcb81cef313095365befe8e98057dd2472430
@@ -696,7 +704,7 @@ CHECKSUMS
   msgpack (1.7.3-java) sha256=49e20b30ad4ed904b72578628f76fc834d5eb0ad28dacd7e501e188f23ebd101
   multi_json (1.15.0) sha256=1fd04138b6e4a90017e8d1b804c039031399866ff3fbabb7822aea367c78615d
   multi_xml (0.7.1) sha256=4fce100c68af588ff91b8ba90a0bb3f0466f06c909f21a32f4962059140ba61b
-  multipart-post (2.2.3) sha256=462979de2971b8df33c2ee797fd497731617241f9dcd93960cc3caccb2dd13d8
+  multipart-post (2.4.1) sha256=9872d03a8e552020ca096adadbf5e3cb1cd1cdd6acd3c161136b8a5737cdb4a8
   net-imap (0.5.0) sha256=b8281598f3c1860679a88de19287673c6835bed6cf0fe1710fb96a5ffcb94aa0
   net-pop (0.1.2) sha256=848b4e982013c15b2f0382792268763b748cce91c9e91e36b0f27ed26420dff3
   net-protocol (0.2.2) sha256=aa73e0cba6a125369de9837b8d8ef82a61849360eba0521900e2c3713aa162a8
@@ -709,12 +717,12 @@ CHECKSUMS
   nokogiri (1.16.7-java) sha256=044c45ca46abc2b6135a85ab39a546ff2f0434d43142bc59b83e5b1068876a42
   nokogiri (1.16.7-x86_64-darwin) sha256=630732b80fc572690eab50c73a1f18988f3ac401ed0b67ca9956ba2b1e2c3faa
   nokogiri (1.16.7-x86_64-linux) sha256=9e1e428641d5942af877c60b418c71163560e9feb4a5c4015f3230a8b86a40f6
-  oauth2 (1.4.10) sha256=8e50fcdcada64d668f79ad3e74adeec1bd24ee0309c2ac803ff394c9d4c2a66d
+  oauth2 (2.0.9) sha256=b21f9defcf52dc1610e0dfab4c868342173dcd707fd15c777d9f4f04e153f7fb
   octokit (4.21.0) sha256=4758eb7048241d5ab40644511c83d93b8e08a2c9e060c32d4a1f35445626662a
   omniauth (2.1.0) sha256=bff7234f5ec9323622b217c7f26d52f850de0b0e2b8c807c3358fc79fe572300
-  omniauth-github (2.0.0) sha256=1ca26576125a97e27d3f8dc39cd98853d7382dd0fc04a40d3b9ec345ee378649
-  omniauth-google-oauth2 (1.0.1) sha256=2ed7a4ac8d98ab824c95e0d6760784abf1248262b3ba2ab56ec7ebd7074d12a6
-  omniauth-oauth2 (1.7.3) sha256=3f5a8f99fa72e0f91d2abd7475ceb972a4ae67ed59e049f314c0c1bad81f4745
+  omniauth-github (2.0.1) sha256=8ff8e70ac6d6db9d52485eef52cfa894938c941496e66b52b5e2773ade3ccad4
+  omniauth-google-oauth2 (1.2.0) sha256=88d5d8e6a4d8cc28c560913ec2d4e71a765ce181915e02a218aadc31b4d895a2
+  omniauth-oauth2 (1.8.0) sha256=b2f8e9559cc7e2d4efba57607691d6d2b634b879fc5b5b6ccfefa3da85089e78
   omniauth-rails_csrf_protection (1.0.2) sha256=1170fd672aff092b9b7ebebc1453559f073ed001e3ce62a1df616e32f8dc5fe0
   orm_adapter (0.5.0) sha256=aa5d0be5d540cbb46d3a93e88061f4ece6a25f6e97d6a47122beb84fe595e9b9
   parallel (1.26.3) sha256=d86babb7a2b814be9f4b81587bf0b6ce2da7d45969fab24d8ae4bf2bb4d4c7ef
@@ -773,6 +781,7 @@ CHECKSUMS
   simplecov (0.22.0) sha256=fe2622c7834ff23b98066bb0a854284b2729a569ac659f82621fc22ef36213a5
   simplecov-html (0.13.1) sha256=5dab0b7ee612e60e9887ad57693832fdf4695b4c0c859eaea5f95c18791ef10b
   simplecov_json_formatter (0.1.4) sha256=529418fbe8de1713ac2b2d612aa3daa56d316975d307244399fa4838c601b428
+  snaky_hash (2.0.1) sha256=1ac87ec157fcfe7a460e821e0cd48ae1e6f5e3e082ab520f03f31a9259dbdc31
   spoon (0.0.6) sha256=3ad18e28f6d36f7379c3085b2e96b6160f1ef55397ca1ed0d39b26fc5bbab3f4
   sprockets (4.1.1) sha256=68b10b0e574fc2a080e4779d025bf39bc7a20bc8659e32f827cccce9581348e2
   sprockets-rails (3.2.2) sha256=62862bce136e31d7497eededde5f7730d4096bc8ef33ef7037c41423ccf89557
@@ -787,6 +796,7 @@ CHECKSUMS
   underscore-rails (1.8.3) sha256=d37d0a297df9078a27e00df6bfa3f3b110eb27dd8f84c1588a9727a2cfbada47
   unicode-display_width (2.6.0) sha256=12279874bba6d5e4d2728cef814b19197dbb10d7a7837a869bab65da943b7f5a
   useragent (0.16.10) sha256=1794380d9ea5c087d687bbfe14752f81839293f238c1132ef05c9344f09e65bb
+  version_gem (1.1.4) sha256=c69752c6d6a9446ad21a030661a988ba10ba05c1ad249532332ecc7efa534621
   warden (1.2.9) sha256=46684f885d35a69dbb883deabf85a222c8e427a957804719e143005df7a1efd0
   websocket-driver (0.7.6) sha256=f69400be7bc197879726ad8e6f5869a61823147372fd8928836a53c2c741d0db
   websocket-driver (0.7.6-java) sha256=bc894b9e9d5aee55ac04b61003e1957c4ef411a5a048199587d0499785b505c3
