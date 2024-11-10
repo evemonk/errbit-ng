@@ -35,7 +35,6 @@ Mongoid::Tasks::Database.create_indexes
 ActionMailer::Base.delivery_method = :test
 
 RSpec.configure do |config|
-  config.include Mongoid::Matchers, type: :model
   config.alias_example_to :fit, focused: true
 
   config.before(:each) do
