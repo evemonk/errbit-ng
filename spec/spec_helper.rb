@@ -37,10 +37,6 @@ ActionMailer::Base.delivery_method = :test
 RSpec.configure do |config|
   config.alias_example_to :fit, focused: true
 
-  config.before(:each) do
-    Mongoid::Config.truncate!
-  end
-
   config.include Haml, type: :helper
   config.include Haml::Helpers, type: :helper
 
