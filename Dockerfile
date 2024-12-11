@@ -12,6 +12,7 @@ RUN echo "gem: --no-document" >> /etc/gemrc \
   && gem update --system "$RUBYGEMS_VERSION" \
   && gem install bundler --version "$BUNDLER_VERSION" \
   && apk add --no-cache \
+    gcompat \
     curl \
     less \
     libxml2-dev \
