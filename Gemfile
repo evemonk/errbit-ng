@@ -1,7 +1,5 @@
 source "https://rubygems.org"
 
-ruby file: ".ruby-version"
-
 gem "rails", "6.1.7.10"
 
 gem "activemodel-serializers-xml"
