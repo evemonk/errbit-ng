@@ -18,7 +18,7 @@ module NotificationServices
 
     def check_params
       if FIELDS.detect { |f| self[f[0]].blank? }
-        errors.add :base, 'You must specify your App ID, Access Token and Recipient\'s phone numbers'
+        errors.add :base, "You must specify your App ID, Access Token and Recipient's phone numbers"
       end
     end
 
@@ -35,7 +35,7 @@ module NotificationServices
       sms = Hoi::SMS.new(api_token, subdomain)
 
       # send sms
-      room_id.split(',').each do |number|
+      room_id.split(",").each do |number|
         sms.send dest: number, msg: "#{Errbit::Config.protocol}://#{Errbit::Config.host}/apps/#{problem.app.id} #{notification_description problem}"
       end
     end

@@ -64,7 +64,7 @@ module NotificationServices
   private
 
     def send_to_users(client, message)
-      user_id.tr(' ', ",").tr(';', ",").split(",").map(&:strip).reject(&:empty?).each do |user|
+      user_id.tr(" ", ",").tr(";", ",").split(",").map(&:strip).reject(&:empty?).each do |user|
         client.send(Jabber::Message.new(user, message))
       end
     end
