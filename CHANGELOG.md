@@ -1,6 +1,7 @@
 # main
 
-* update Ruby to 3.3.6
+* Run tests on CI for Ruby 3.1, 3.2 and 3.3
+* Update Ruby to 3.3.6
 * Update Ruby to 3.2.6
 * Improve bundler platforms support (for faster docker image builds)
 * Migrate to zeitwerk
