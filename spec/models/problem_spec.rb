@@ -1,4 +1,4 @@
-describe Problem, type: "model" do
+RSpec.describe Problem, type: :model do
   context "validations" do
     it "requires an environment" do
       err = Fabricate.build(:problem, environment: nil)

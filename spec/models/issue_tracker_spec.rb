@@ -1,4 +1,4 @@
-describe IssueTracker, type: "model" do
+RSpec.describe IssueTracker, type: :model do
   describe "Association" do
     it { is_expected.to be_embedded_in(:app) }
   end

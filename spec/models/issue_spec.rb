@@ -1,4 +1,4 @@
-describe Issue, type: "model" do
+RSpec.describe Issue, type: :model do
   subject(:issue) { Issue.new(problem: problem, user: user, body: body) }
 
   let(:problem) { notice.problem }

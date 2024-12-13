@@ -4,7 +4,7 @@ Fabrication::Config.fabricator_path.each do |folder|
   end
 end
 
-describe "Fabrication" do
+RSpec.describe "Fabrication", type: :model do
   # TODO : when 1.8.7 drop support se directly Symbol#sort
   Fabrication.manager.schematics.keys.sort.each do |fabricator_name|
     context "Fabricate(:#{fabricator_name})" do

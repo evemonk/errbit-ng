@@ -1,4 +1,4 @@
-describe Watcher, type: "model" do
+RSpec.describe Watcher, type: :model do
   context "validations" do
     it "requires an email address or an associated user" do
       watcher = Fabricate.build(:watcher, email: nil, user: nil)
