@@ -32,7 +32,7 @@ class BacktraceLineDecorator < Draper::Decorator
 
   def to_s
     column = object.try(:[], :column)
-    "#{file_relative}:#{number}#{column.present? ? ":#{column}" : ''}"
+    "#{file_relative}:#{number}#{column.present? ? ":#{column}" : ""}"
   end
 
   def link_to_source_file(app, &block)
@@ -46,16 +46,16 @@ class BacktraceLineDecorator < Draper::Decorator
   end
 
   def decorated_path
-    path.
-      sub(Backtrace::IN_APP_PATH, "").
-      sub(Backtrace::GEMS_PATH, "<strong>\\1</strong>")
+    path
+      .sub(Backtrace::IN_APP_PATH, "")
+      .sub(Backtrace::GEMS_PATH, "<strong>\\1</strong>")
   end
 
-private
+  private
 
   def link_to_in_app_source_file(app, text)
     return unless in_app?
-    if file_name =~ /\.js$/
+    if /\.js$/.match?(file_name)
       link_to_hosted_javascript(app, text)
     else
       link_to_repo_source_file(app, text) ||

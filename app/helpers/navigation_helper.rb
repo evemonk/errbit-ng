@@ -12,18 +12,18 @@ module NavigationHelper
   # will not even set a class attribute if nil is passed back.
   def active_if_here(matches)
     current_controller = controller.controller_name.to_sym
-    current_action     = controller.action_name.to_sym
+    current_action = controller.action_name.to_sym
 
-    sections =  case matches
-                when Hash
-                  matches
-                when Array
-                  s = {}
-                  matches.each { |c| s[c] = :all }
-                  s
-                else
-                  { matches => :all }
-                end
+    sections = case matches
+    when Hash
+      matches
+    when Array
+      s = {}
+      matches.each { |c| s[c] = :all }
+      s
+    else
+      {matches => :all}
+    end
 
     active = nil
     sections.each do |controller, actions|

@@ -35,29 +35,30 @@ class ProblemsController < ApplicationController
   # it would be possible to add a really fancy UI for it at some point, but for now, it's really
   # useful if there are noisy apps that you want to ignore.
   expose(:problems) do
-    finder = Problem.
-      for_apps(app_scope).
-      in_env(params_environement).
-      filtered(filter).
-      all_else_unresolved(all_errs).
-      ordered_by(params_sort, params_order)
+    finder = Problem
+      .for_apps(app_scope)
+      .in_env(params_environement)
+      .filtered(filter)
+      .all_else_unresolved(all_errs)
+      .ordered_by(params_sort, params_order)
 
     finder = finder.search(params[:search]) if params[:search].present?
     finder.page(params[:page]).per(current_user.per_page)
   end
 
-  def index; end
+  def index
+  end
 
   def show
     notice =
       if params[:notice_id]
         Notice.find(params[:notice_id])
       else
-        @notices = problem.object.notices.reverse_ordered.
-          page(params[:notice]).per(1)
+        @notices = problem.object.notices.reverse_ordered
+          .page(params[:notice]).per(1)
         @notices.first
       end
-    @notice  = notice ? NoticeDecorator.new(notice) : nil
+    @notice = notice ? NoticeDecorator.new(notice) : nil
     @comment = Comment.new
   end
 
@@ -103,7 +104,7 @@ class ProblemsController < ApplicationController
   def resolve_several
     selected_problems.each(&:resolve!)
 
-    flash[:success] = "Great news everyone! #{I18n.t(:n_errs_have, count: selected_problems.count)} #{I18n.t('n_errs_have.been_resolved')}."
+    flash[:success] = "Great news everyone! #{I18n.t(:n_errs_have, count: selected_problems.count)} #{I18n.t("n_errs_have.been_resolved")}."
 
     redirect_back fallback_location: root_path
   end
@@ -111,7 +112,7 @@ class ProblemsController < ApplicationController
   def unresolve_several
     selected_problems.each(&:unresolve!)
 
-    flash[:success] = "#{I18n.t(:n_errs_have, count: selected_problems.count)} #{I18n.t('n_errs_have.been_unresolved')}."
+    flash[:success] = "#{I18n.t(:n_errs_have, count: selected_problems.count)} #{I18n.t("n_errs_have.been_unresolved")}."
 
     redirect_back fallback_location: root_path
   end
@@ -131,7 +132,7 @@ class ProblemsController < ApplicationController
   def unmerge_several
     all = selected_problems.flat_map(&:unmerge!)
 
-    flash[:success] = "#{I18n.t(:n_errs_have, count: all.length)} #{I18n.t('n_errs_have.been_unmerged')}."
+    flash[:success] = "#{I18n.t(:n_errs_have, count: all.length)} #{I18n.t("n_errs_have.been_unmerged")}."
 
     redirect_back fallback_location: root_path
   end
@@ -139,7 +140,7 @@ class ProblemsController < ApplicationController
   def destroy_several
     DestroyProblemsByIdJob.perform_later(selected_problems_ids)
 
-    flash[:notice] = "#{I18n.t(:n_errs, count: selected_problems.size)} #{I18n.t('n_errs.will_be_deleted')}."
+    flash[:notice] = "#{I18n.t(:n_errs, count: selected_problems.size)} #{I18n.t("n_errs.will_be_deleted")}."
 
     redirect_back fallback_location: root_path
   end
@@ -147,7 +148,7 @@ class ProblemsController < ApplicationController
   def destroy_all
     DestroyProblemsByAppJob.perform_later(app.id)
 
-    flash[:success] = "#{I18n.t(:n_errs, count: app.problems.count)} #{I18n.t('n_errs.will_be_deleted')}."
+    flash[:success] = "#{I18n.t(:n_errs, count: app.problems.count)} #{I18n.t("n_errs.will_be_deleted")}."
 
     redirect_back fallback_location: root_path
   end
@@ -159,7 +160,7 @@ class ProblemsController < ApplicationController
     end
   end
 
-private
+  private
 
   def need_selected_problem
     return if err_ids.any?
