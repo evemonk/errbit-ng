@@ -10,7 +10,7 @@ describe NoticeFingerprinter, type: "model" do
       expect(f1).to eq(f2)
     end
 
-    %w(error_class message component action environment_name).each do |i|
+    %w[error_class message component action environment_name].each do |i|
       it "affects the fingerprint when #{i} is false" do
         f1 = fingerprinter.generate("123", notice, backtrace)
         f2 = fingerprinter.generate("123", notice, backtrace)
@@ -41,7 +41,7 @@ describe NoticeFingerprinter, type: "model" do
       before do
         backtrace1.lines[0] = backtrace2.lines[0]
         backtrace1.lines[1] = backtrace2.lines[1]
-        backtrace1.lines[2] = { number: 1, file: "a", method: :b }
+        backtrace1.lines[2] = {number: 1, file: "a", method: :b}
       end
 
       it "has the same fingerprint when only considering two lines" do

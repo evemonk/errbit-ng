@@ -2,9 +2,9 @@ describe AirbrakeApi::V3::NoticeParser do
   let(:app) { Fabricate(:app) }
   let(:notifier_params) do
     {
-      "name"    => "notifiername",
+      "name" => "notifiername",
       "version" => "notifierversion",
-      "url"     => "notifierurl"
+      "url" => "notifierurl"
     }
   end
 
@@ -34,16 +34,16 @@ describe AirbrakeApi::V3::NoticeParser do
     expect(report.message).to eq("Error: TestError")
     expect(report.backtrace.lines.size).to eq(9)
     expect(notice.user_attributes).to include(
-      "id"       => 1,
-      "name"     => "John Doe",
-      "email"    => "john.doe@example.org",
+      "id" => 1,
+      "name" => "John Doe",
+      "email" => "john.doe@example.org",
       "username" => "john"
     )
     expect(notice.session).to include("isAdmin" => true)
     expect(notice.params).to include("returnTo" => "dashboard")
     expect(notice.env_vars).to include(
       "navigator_vendor" => "Google Inc.",
-      "HTTP_USER_AGENT"  => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.99 Safari/537.36"
+      "HTTP_USER_AGENT" => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.99 Safari/537.36"
     )
   end
 
@@ -74,47 +74,50 @@ describe AirbrakeApi::V3::NoticeParser do
     notice = report.generate_notice!
 
     expect(notice.user_attributes).to include(
-      "id"       => 1,
-      "name"     => "John Doe",
-      "email"    => "john.doe@example.org",
+      "id" => 1,
+      "name" => "John Doe",
+      "email" => "john.doe@example.org",
       "username" => "john"
     )
   end
 
   it "takes the notifier from root" do
     parser = described_class.new(
-      "errors"      => ["MyError"],
-      "notifier"    => notifier_params,
-      "environment" => {})
+      "errors" => ["MyError"],
+      "notifier" => notifier_params,
+      "environment" => {}
+    )
     expect(parser.attributes[:notifier]).to eq(notifier_params)
   end
 
   it "takes the notifier from the context" do
     parser = described_class.new(
-      "errors"      => ["MyError"],
-      "context"     => { "notifier" => notifier_params },
-      "environment" => {})
+      "errors" => ["MyError"],
+      "context" => {"notifier" => notifier_params},
+      "environment" => {}
+    )
     expect(parser.attributes[:notifier]).to eq(notifier_params)
   end
 
   it "takes the hostname from the context" do
     parser = described_class.new(
-      "errors"      => ["MyError"],
-      "context"     => { "hostname" => "app01.infra.example.com", "url" => "http://example.com/some-page" },
-      "environment" => {})
+      "errors" => ["MyError"],
+      "context" => {"hostname" => "app01.infra.example.com", "url" => "http://example.com/some-page"},
+      "environment" => {}
+    )
     expect(parser.attributes[:server_environment]["hostname"]).to eq("app01.infra.example.com")
   end
 
   describe "#user_attributes" do
     it "returns a user context hash" do
-      user_hash = { id: 1, name: "John Doe" }
-      parser = described_class.new("context" => { "user" => user_hash })
+      user_hash = {id: 1, name: "John Doe"}
+      parser = described_class.new("context" => {"user" => user_hash})
       expect(parser.send(:user_attributes)).to eq(user_hash)
     end
 
     it "returns a hash for a user context string" do
       user_string = "[Filtered]"
-      parser = described_class.new("context" => { "user" => user_string })
+      parser = described_class.new("context" => {"user" => user_string})
       expect(parser.send(:user_attributes)).to eq(user: user_string)
     end
   end
