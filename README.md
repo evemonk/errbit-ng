@@ -13,6 +13,13 @@ This is fork of [errbit](https://github.com/errbit/errbit).
 * Modern Ruby on Rails 6.1. 7.0+ upgrade in progress.
 * First Class JRuby support (in progress). For errbit-ng itself on jruby and applications running on jruby.
 
+## Fork goals
+
+* Keep errbit (as errbit-ng) still up and running with support
+* Keep application on fresh Ruby
+* Keep application on fresh Ruby on Rails
+* Make sure that You can live on latest stable tag from Docker Hub. With security and any important (or not so) fixes.
+
 ## Migration from errbit
 
 Official docker images: [hub.docker.com](https://hub.docker.com/r/biow0lf/errbit-ng)
