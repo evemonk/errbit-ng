@@ -77,8 +77,14 @@ describe Mailer do
       expect(email).to have_body_text('<p class="backtrace" style="')
     end
 
-    it "should have links to source files" do
-      expect(email).to have_body_text('<a target="_blank" href="http://example.com/path/to/file.js">path/to/file.js')
+    if !jruby?
+      it "should have links to source files" do
+        expect(email).to have_body_text('<a target="_blank" href="http://example.com/path/to/file.js">path/to/file.js')
+      end
+    else
+      it "should have links to source files" do
+        expect(email).to have_body_text('<a href="http://example.com/path/to/file.js" target="_blank">path/to/file.js')
+      end
     end
 
     it "should have the error count in the subject" do
