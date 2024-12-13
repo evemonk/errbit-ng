@@ -11,9 +11,9 @@ class Api::V1::StatsController < ApplicationController
     end
 
     stats = {
-      name:              @app.name,
-      id:                @app.id,
-      last_error_time:   @last_error_time,
+      name: @app.name,
+      id: @app.id,
+      last_error_time: @last_error_time,
       unresolved_errors: @app.unresolved_count
     }
 
@@ -23,7 +23,7 @@ class Api::V1::StatsController < ApplicationController
     end
   end
 
-private
+  private
 
   def require_api_key_or_authenticate_user!
     if params[:api_key].present?

@@ -25,13 +25,13 @@ module Api
           render status: :created, json: comment
         else
           render(
-            body:   { errors: comment.errors.full_messages }.to_json,
+            body: {errors: comment.errors.full_messages}.to_json,
             status: :unprocessable_entity
           )
         end
       end
 
-    private
+      private
 
       def comment_params
         # merge makes a copy, merge! edits in place

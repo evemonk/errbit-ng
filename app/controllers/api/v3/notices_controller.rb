@@ -13,10 +13,10 @@ class Api::V3::NoticesController < ApplicationController
     return render(status: :ok, body: "") if request.method == "OPTIONS"
 
     merged_params = if request.raw_post.present?
-                      params.merge!(JSON.parse(request.raw_post))
-                    else
-                      params
-                    end
+      params.merge!(JSON.parse(request.raw_post))
+    else
+      params
+    end
 
     # merge makes a copy, merge! edits in place
     merged_params = merged_params.merge!("key" => request.headers["X-Airbrake-Token"]) if request.headers["X-Airbrake-Token"]
@@ -28,14 +28,14 @@ class Api::V3::NoticesController < ApplicationController
 
     report.generate_notice!
     render status: :created, json: {
-      id:  report.notice.id,
+      id: report.notice.id,
       url: report.problem.url
     }
   rescue AirbrakeApi::ParamsError
     render body: "Invalid request", status: :bad_request
   end
 
-private
+  private
 
   def authorization_token
     request.headers["Authorization"].to_s[/Bearer (.+)/, 1]
