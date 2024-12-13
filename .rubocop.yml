@@ -1,8 +1,10 @@
 AllCops:
+  TargetRubyVersion: 3.1
   SuggestExtensions: false
   DisabledByDefault: true
   Exclude:
     - "bin/*"
+    - "vendor/**/*"
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
