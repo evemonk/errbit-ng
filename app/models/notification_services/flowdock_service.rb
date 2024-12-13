@@ -4,7 +4,7 @@ module NotificationServices
     FIELDS += [
       [
         :api_token, {
-          label:       "Flow API Token",
+          label: "Flow API Token",
           placeholder: "123456789abcdef123456789abcdefgh"
         }
       ]
@@ -23,9 +23,9 @@ module NotificationServices
     def create_notification(problem)
       flow = Flowdock::Flow.new(
         api_token: api_token,
-        source:    "Errbit",
-        from:      {
-          name:    "Errbit",
+        source: "Errbit",
+        from: {
+          name: "Errbit",
           address: ENV["ERRBIT_EMAIL_FROM"] || "support@flowdock.com"
         }
       )
@@ -35,11 +35,11 @@ module NotificationServices
         subject: subject,
         content: content(problem, url),
         project: project_name(problem),
-        link:    url
+        link: url
       )
     end
 
-  private
+    private
 
     # can only contain alphanumeric characters and underscores
     def project_name(problem)

@@ -4,11 +4,11 @@ module NotificationServices
     FIELDS += [
       [:api_token, {
         placeholder: "http://hubot.example.org:8080/hubot/say",
-        label:       "Hubot URL"
+        label: "Hubot URL"
       }],
       [:room_id, {
         placeholder: "#dev",
-        label:       "Room where Hubot should notify"
+        label: "Room where Hubot should notify"
       }]
     ]
 
@@ -27,7 +27,7 @@ module NotificationServices
     end
 
     def create_notification(problem)
-      HTTParty.post(url, body: { message: message_for_hubot(problem), room: room_id })
+      HTTParty.post(url, body: {message: message_for_hubot(problem), room: room_id})
     end
   end
 end
