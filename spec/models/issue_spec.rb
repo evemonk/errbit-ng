@@ -2,8 +2,8 @@ describe Issue, type: "model" do
   subject(:issue) { Issue.new(problem: problem, user: user, body: body) }
 
   let(:problem) { notice.problem }
-  let(:notice)  { Fabricate(:notice) }
-  let(:user)    { Fabricate(:admin) }
+  let(:notice) { Fabricate(:notice) }
+  let(:user) { Fabricate(:admin) }
   let(:issue_tracker) do
     Fabricate(:issue_tracker).tap do |t|
       t.instance_variable_set(:@tracker, ErrbitPlugin::MockIssueTracker.new(t.options))
@@ -51,14 +51,15 @@ describe Issue, type: "model" do
     context "#render_body_args" do
       it "returns custom args if they exist" do
         allow(issue.tracker).to receive(:render_body_args).and_return(
-          ["my", { custom: "args" }]
+          ["my", {custom: "args"}]
         )
-        expect(issue.render_body_args).to eq ["my", { custom: "args" }]
+        expect(issue.render_body_args).to eq ["my", {custom: "args"}]
       end
 
       it "returns default args if none exist" do
         expect(issue.render_body_args).to eq [
-          "issue_trackers/issue", formats: [:md]]
+          "issue_trackers/issue", formats: [:md]
+        ]
       end
     end
 
