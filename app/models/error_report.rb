@@ -65,20 +65,20 @@ class ErrorReport
 
   def make_notice
     @notice = Notice.new(
-      app:                app,
-      message:            message,
-      error_class:        error_class,
-      backtrace:          backtrace,
-      request:            request,
+      app: app,
+      message: message,
+      error_class: error_class,
+      backtrace: backtrace,
+      request: request,
       server_environment: server_environment,
-      notifier:           notifier,
-      user_attributes:    user_attributes,
-      framework:          framework
+      notifier: notifier,
+      user_attributes: user_attributes,
+      framework: framework
     )
   end
 
   def retrieve_problem_was_resolved
-    @problem_was_resolved = Problem.where("_id" => @error.problem_id, resolved: true).exists?
+    @problem_was_resolved = Problem.where("_id" => @error.problem_id, :resolved => true).exists?
   end
 
   # Update problem cache with information about this notice

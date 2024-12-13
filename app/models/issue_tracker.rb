@@ -16,7 +16,7 @@ class IssueTracker
         # TODO: we need to find out a better way to pass those config to the issue tracker
         klass.new(
           options.merge(
-            github_repo:    app.try(:github_repo),
+            github_repo: app.try(:github_repo),
             bitbucket_repo: app.try(:bitbucket_repo)
           )
         )
@@ -24,7 +24,7 @@ class IssueTracker
   end
 
   def type_tracker
-    attributes["type_tracker"] ? attributes["type_tracker"] : "none"
+    attributes["type_tracker"] || "none"
   end
 
   # Allow the tracker to validate its own params
