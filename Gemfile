@@ -22,7 +22,7 @@ gem "omniauth-github"
 gem "omniauth-google-oauth2"
 gem "rack-ssl", require: "rack/ssl" # force SSL
 gem "rack-ssl-enforcer", require: false
-gem "rinku"
+gem "rails_autolink"
 gem "useragent"
 gem "uri"
 
@@ -88,6 +88,7 @@ group :test do
   gem "email_spec"
   gem "timecop"
   gem "simplecov", require: false
+  gem "super_diff"
 end
 
 group :no_docker, :test, :development do
