@@ -5,7 +5,7 @@ RSpec.describe NotificationServices::HoiioService do
     problem = notice.problem
 
     # hoi stubbing
-    sms = double('HoiioService')
+    sms = double("HoiioService")
     allow(Hoi::SMS).to receive(:new).and_return(sms)
     allow(sms).to receive(:send).and_return(true)
 

@@ -5,7 +5,7 @@ RSpec.describe NotificationServices::PushoverService do
     problem = notice.problem
 
     # hoi stubbing
-    notification = double('PushoverService')
+    notification = double("PushoverService")
     allow(Rushover::Client).to receive(:new).and_return(notification)
     allow(notification).to receive(:notify).and_return(true)
 

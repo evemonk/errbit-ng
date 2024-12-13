@@ -6,7 +6,7 @@ describe NotificationServices::GtalkService do
     problem = notice.problem
 
     # gtalk stubbing
-    gtalk = double('GtalkService')
+    gtalk = double("GtalkService")
     jid = double("jid")
     message = double("message")
     expect(Jabber::JID).to receive(:new).with(notification_service.subdomain).and_return(jid)
@@ -41,7 +41,7 @@ describe NotificationServices::GtalkService do
 #{@notification_service.notification_description @problem}"""
 
       # gtalk stubbing
-      @gtalk = double('GtalkService')
+      @gtalk = double("GtalkService")
       expect(@gtalk).to receive(:connect)
       expect(@gtalk).to receive(:auth)
       jid = double("jid")
@@ -97,7 +97,7 @@ describe NotificationServices::GtalkService do
     problem = notice.problem
 
     # gtalk stubbing
-    gtalk = double('GtalkService')
+    gtalk = double("GtalkService")
     jid = double("jid")
     message = double("message")
     expect(Jabber::JID).to receive(:new).with(notification_service.subdomain).and_return(jid)
