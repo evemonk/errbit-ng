@@ -27,4 +27,5 @@ jobs:
           rubygems: latest
           bundler: latest
           bundler-cache: true
+      - uses: r7kamura/rubocop-problem-matchers-action@v1.2.2
       - run: bin/rubocop --parallel
