@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
-require 'rubygems'
-require 'test_queue'
-require 'test_queue/runner/rspec'
+require "rubygems"
+require "test_queue"
+require "test_queue/runner/rspec"
 
-require 'bundler'
+require "bundler"
 Bundler.setup(:default, :development, :test)
 
 class MongoidRspecRunner < TestQueue::Runner::RSpec
