@@ -1,6 +1,8 @@
 AllCops:
   SuggestExtensions: false
   DisabledByDefault: true
+  Exclude:
+    - "bin/*"
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
