@@ -20,7 +20,7 @@ RUN echo "gem: --no-document" >> /etc/gemrc \
     nodejs \
     tzdata
 
-COPY [".ruby-version", "Gemfile", "Gemfile.lock", "/app/"]
+COPY ["Gemfile", "Gemfile.lock", "/app/"]
 
 COPY ["vendor/", "/app/vendor/"]
 
