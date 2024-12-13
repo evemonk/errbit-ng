@@ -553,7 +553,6 @@ PLATFORMS
   arm64-linux
   java
   ruby
-  universal-java-23
   x86-linux
   x86_64-darwin
   x86_64-linux
