@@ -10,6 +10,9 @@ on:
   schedule:
     - cron: "0 21 * * 6"
 
+env:
+  JRUBY_OPTS: "--debug"
+
 jobs:
   rspec:
     # TODO: update to "ubuntu-24.04"
