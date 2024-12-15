@@ -7,7 +7,7 @@ require Rails.root.join("config/routes.rb")
 class Mailer < ActionMailer::Base
   helper ApplicationHelper
 
-  default :from                      => Errbit::Config.email_from,
+  default :from => Errbit::Config.email_from,
     "X-Errbit-Host"            => Errbit::Config.host,
     "X-Mailer"                 => "Errbit",
     "X-Auto-Response-Suppress" => "OOF, AutoReply",
@@ -21,7 +21,7 @@ class Mailer < ActionMailer::Base
     count = error_report.problem.notices_count
     count = count > 1 ? "(#{count}) " : ""
 
-    errbit_headers "App"         => @app.name,
+    errbit_headers "App" => @app.name,
       "Environment" => @notice.environment_name,
       "Error-Id"    => @notice.err_id
 
@@ -38,7 +38,7 @@ class Mailer < ActionMailer::Base
 
     recipients = @comment.notification_recipients
 
-    errbit_headers "App"            => @app.name,
+    errbit_headers "App" => @app.name,
       "Environment"    => @notice.environment_name,
       "Problem-Id"     => @problem.id,
       "Comment-Author" => @user.name
@@ -47,7 +47,7 @@ class Mailer < ActionMailer::Base
       subject: "#{@user.name} commented on [#{@app.name}][#{@notice.environment_name}] #{@notice.message.truncate(50)}"
   end
 
-private
+  private
 
   def errbit_headers(header)
     header.each { |key, value| headers["X-Errbit-#{key}"] = value.to_s }
