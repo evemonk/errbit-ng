@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe "problems/show.html.ics", type: "view" do
+RSpec.describe "problems/show.html.ics", type: "view" do
   let(:problem) { ProblemDecorator.new(Fabricate(:problem)) }
 
   before do

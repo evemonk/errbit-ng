@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-describe "users/show.html.haml", type: "view" do
+require "rails_helper"
+
+RSpec.describe "users/show.html.haml", type: "view" do
   let(:user) do
     stub_model(User, created_at: Time.zone.now, email: "test@example.com")
   end
