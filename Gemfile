@@ -93,11 +93,11 @@ group :test do
 end
 
 gem "puma"
-gem "sass-rails"
 gem "uglifier"
 gem "jquery-rails"
 gem "pjax_rails"
 gem "underscore-rails"
+gem "zeitwerk", "2.6.18"
 
 gem "sucker_punch"
 
