@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe Devise::SessionsController, type: "controller" do
   render_views
 

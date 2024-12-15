@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe Users::OmniauthCallbacksController, type: "controller" do
   def stub_env_for_github_omniauth(login, token = nil, email = "user@example.com")
     # This a Devise specific thing for functional tests. See https://github.com/plataformatec/devise/issues/closed#issue/608

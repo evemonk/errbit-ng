@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "acceptance/acceptance_helper"
 
 feature "Sign in with Google" do

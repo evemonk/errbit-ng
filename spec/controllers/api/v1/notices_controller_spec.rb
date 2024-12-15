@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe Api::V1::NoticesController, type: "controller" do
   context "when logged in" do
     before do

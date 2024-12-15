@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe NoticesController, type: "controller" do
   it_requires_authentication for: {locate: :get}
 

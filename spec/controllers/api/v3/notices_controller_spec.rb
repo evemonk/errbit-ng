@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe Api::V3::NoticesController, type: :controller do
   let(:app) { Fabricate(:app) }
   let(:project_id) { app.api_key }

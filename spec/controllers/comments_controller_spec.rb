@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe CommentsController, type: "controller" do
   let(:app) { Fabricate(:app) }
   let(:err) { Fabricate(:err, problem: Fabricate(:problem, app: app, environment: "production")) }

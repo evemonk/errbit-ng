@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe SiteConfigController, type: "controller" do
   it_requires_admin_privileges for: {
     index: :get,

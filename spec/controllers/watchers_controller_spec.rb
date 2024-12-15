@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe WatchersController, type: "controller" do
   let(:user) { Fabricate(:user) }
   let(:problem) { Fabricate(:problem) }

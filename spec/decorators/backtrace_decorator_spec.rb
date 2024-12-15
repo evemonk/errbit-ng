@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe BacktraceDecorator, type: :decorator do
   let(:backtrace) do
     described_class.new(

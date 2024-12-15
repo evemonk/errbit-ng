@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe ProblemsController, type: "controller" do
   it_requires_authentication for:    {
     index: :get, show: :get, resolve: :put, search: :get
