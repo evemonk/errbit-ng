@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-require "acceptance/acceptance_helper"
+require "features/acceptance_helper"
 
 RSpec.feature "password reset token", type: :feature do
   let(:user) { Fabricate :user }

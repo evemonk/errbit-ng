@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-require "acceptance/acceptance_helper"
+require "features/acceptance_helper"
 
 RSpec.feature "Regeneration api_Key", type: :feature do
   let(:app) { Fabricate(:app) }

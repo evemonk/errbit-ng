@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-require "acceptance/acceptance_helper"
+require "features/acceptance_helper"
 
 RSpec.feature "Sign in with GitHub", type: :feature do
   background do
