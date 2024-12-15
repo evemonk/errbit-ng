@@ -30,7 +30,7 @@ describe Api::V1::CommentsController, type: "controller" do
       end
 
       it "should return all comments of a problem" do
-        get :index, params: {problem_id: @problem.id, auth_token: @user.authentication_token}
+        get :index, params: {problem_id: @problem.id, auth_token: @user.authentication_token, format: "json"}
         expect(response).to be_successful
         comments = response.parsed_body
         expect(comments.length).to eq 2
@@ -54,10 +54,10 @@ describe Api::V1::CommentsController, type: "controller" do
       context "with invalid params" do
         it "shoudn't create comment" do
           expect do
-            post :create, params: {problem_id: @problem.id, auth_token: @user.authentication_token, comment: {body: nil}}
+            post :create, params: {problem_id: @problem.id, auth_token: @user.authentication_token, comment: {body: nil}, format: :json}
           end.not_to change(Comment, :count)
           expect(response).not_to be_successful
-          errors = response.parsed_body
+          errors = JSON.parse response.body
           expect(errors).to eq("errors" => ["Body can't be blank"])
         end
       end
