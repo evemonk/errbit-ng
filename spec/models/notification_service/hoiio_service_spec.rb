@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe NotificationServices::HoiioService do
   it "it should send a notification to hoiio" do
     notice = Fabricate :notice

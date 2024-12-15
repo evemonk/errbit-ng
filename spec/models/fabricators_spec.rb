@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Fabrication::Config.fabricator_path.each do |folder|
   Dir.glob(File.join(Rails.root, folder, "**", "*.rb")).each do |file|
     require file

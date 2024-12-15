@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Comment, type: :model do
   context "validations" do
     it "should require a body" do

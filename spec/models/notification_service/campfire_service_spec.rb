@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe NotificationServices::CampfireService do
   it "it should send a notification to campfire" do
     notice = Fabricate :notice

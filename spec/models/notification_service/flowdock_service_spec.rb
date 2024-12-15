@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe NotificationServices::FlowdockService do
   let(:service) { Fabricate.build(:flowdock_notification_service) }
   let(:app) { Fabricate(:app, name: "App #3") }

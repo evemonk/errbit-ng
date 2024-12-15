@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe NotificationServices::GtalkService do
   it "it should send a notification to gtalk" do
     notice = Fabricate :notice

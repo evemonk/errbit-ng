@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe ProblemRecacher do
   let(:app) { Fabricate(:app) }
   let(:backtrace) do

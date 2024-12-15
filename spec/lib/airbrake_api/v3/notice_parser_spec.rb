@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe AirbrakeApi::V3::NoticeParser do
   let(:app) { Fabricate(:app) }
   let(:notifier_params) do

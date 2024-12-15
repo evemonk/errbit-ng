@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "airbrake/version"
 require "airbrake/backtrace"
 require "airbrake/notice"

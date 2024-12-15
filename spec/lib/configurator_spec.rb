@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe Configurator do
   before(:each) do
     allow(ENV).to receive(:[]).and_return(nil)

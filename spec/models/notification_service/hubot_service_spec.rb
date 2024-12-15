@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe NotificationServices::HubotService do
   it "it should send a notification to Hubot" do
     notice = Fabricate :notice

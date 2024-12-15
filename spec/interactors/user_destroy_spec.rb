@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe UserDestroy do
   let(:app) do
     Fabricate(

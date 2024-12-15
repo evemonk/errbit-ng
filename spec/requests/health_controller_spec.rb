@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe HealthController, type: "request" do
   let(:errbit_app) { Fabricate(:app, api_key: "APIKEY") }
 

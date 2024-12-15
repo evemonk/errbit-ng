@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe ProblemMerge do
   let(:problem) { Fabricate(:problem_with_errs) }
   let(:problem_1) { Fabricate(:problem_with_errs) }

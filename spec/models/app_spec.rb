@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe App, type: :model do
   context "Attributes" do
     it { is_expected.to have_field(:_id).of_type(String) }

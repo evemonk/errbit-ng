@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe ResolvedProblemClearer do
   let(:resolved_problem_clearer) do
     ResolvedProblemClearer.new

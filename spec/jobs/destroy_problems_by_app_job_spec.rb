@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe DestroyProblemsByAppJob, type: :job do
   before do
     @app = Fabricate(:app)

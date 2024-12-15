@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe Errbit::Version do
   let(:version) { "0.0.0" }
 

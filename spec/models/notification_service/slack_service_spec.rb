@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe NotificationServices::SlackService do
   let(:backtrace) do
     Fabricate :backtrace, lines: [

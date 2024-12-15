@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Notice, type: :model do
   context "validations" do
     it "requires a backtrace" do

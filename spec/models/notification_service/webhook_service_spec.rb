@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe NotificationServices::WebhookService do
   it "it should send a notification to a user-specified URL" do
     notice = Fabricate :notice

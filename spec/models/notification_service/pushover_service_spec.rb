@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe NotificationServices::PushoverService do
   it "it should send a notification to Pushover" do
     notice = Fabricate :notice
