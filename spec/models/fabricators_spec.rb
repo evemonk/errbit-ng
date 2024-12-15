@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Fabrication::Config.fabricator_path.each do |folder|
-  Dir.glob(File.join(Rails.root, folder, "**", "*.rb")).each do |file|
+  Dir.glob(Rails.root.join(folder, "**", "*.rb").to_s).each do |file|
     require file
   end
 end
