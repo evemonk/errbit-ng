@@ -16,7 +16,6 @@ RSpec.describe ProblemsHelper, type: :helper do
       end
     end
 
-
     it "sanitizes body of html tags" do
       expect(helper.auto_link_format("Hello, <b>World!</b>")).to eq "<p>Hello, World!</p>"
     end

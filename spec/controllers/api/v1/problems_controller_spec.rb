@@ -50,7 +50,8 @@ describe Api::V1::ProblemsController, type: "controller" do
           "resolved_at",
           "where",
           "notices_count",
-          "environment"])
+          "environment"
+        ])
       end
 
       it "returns a 404 if the problem cannot be found" do
