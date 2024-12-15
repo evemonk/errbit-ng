@@ -1,11 +1,42 @@
+# We want Exclude directives from different
+# config files to get merged, not overwritten
+inherit_mode:
+  merge:
+    - Exclude
+
+require:
+  - standard
+  - standard-custom
+  - standard-performance
+  - rubocop-performance
+  - rubocop-rails
+
+inherit_gem:
+  standard: config/base.yml
+  standard-performance: config/base.yml
+  standard-custom: config/base.yml
+
+inherit_from:
+  - .rubocop_strict.yml
+
 AllCops:
   TargetRubyVersion: 3.1
   SuggestExtensions: false
-  DisabledByDefault: true
+  NewCops: enable
   Exclude:
     - "bin/*"
     - "vendor/**/*"
 
-Style/StringLiterals:
-  EnforcedStyle: double_quotes
+# Enable and enforce
+Style/FrozenStringLiteralComment:
   Enabled: true
+
+# Enable and enforce
+Style/WordArray:
+  Enabled: true
+  EnforcedStyle: brackets
+
+# Enable and enforce
+Style/SymbolArray:
+  Enabled: true
+  EnforcedStyle: brackets

@@ -1,0 +1,7 @@
+Lint/Debugger:
+  Enabled: true
+  Exclude: []
+
+#RSpec/Focus:
+#  Enabled: true
+#  Exclude: []
