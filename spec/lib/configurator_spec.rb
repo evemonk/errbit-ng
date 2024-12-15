@@ -8,12 +8,12 @@ describe Configurator do
   end
 
   it "takes the first existing env, second item" do
-    result = Configurator.run(two: %w[VARTWO VARTHREE])
+    result = Configurator.run(two: ["VARTWO", "VARTHREE"])
     expect(result.two).to eq("zipp")
   end
 
   it "takes the first existing env, first item" do
-    result = Configurator.run(three: %w[VARTHREE VARONE])
+    result = Configurator.run(three: ["VARTHREE", "VARONE"])
     expect(result.three).to eq("zipp")
   end
 
@@ -42,7 +42,7 @@ describe Configurator do
   it "extracts array values" do
     allow(ENV).to receive(:[]).with("MYARRAY").and_return("[one,two,three]")
     result = Configurator.run(myarray: ["MYARRAY"])
-    expect(result.myarray).to eq(%w[one two three])
+    expect(result.myarray).to eq(["one", "two", "three"])
   end
 
   it "extracts booleans" do
