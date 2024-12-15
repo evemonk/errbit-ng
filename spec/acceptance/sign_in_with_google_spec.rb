@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
+require "rails_helper"
+
 require "acceptance/acceptance_helper"
 
-RSpec.feature "Sign in with Google" do
+RSpec.feature "Sign in with Google", type: :feature do
   background do
     allow(Errbit::Config).to receive(:google_authentication).and_return(true)
     Fabricate(:user, google_uid: "nashby")
@@ -24,7 +26,7 @@ RSpec.feature "Sign in with Google" do
   end
 end
 
-RSpec.feature "Sign in with Google with auto provision" do
+RSpec.feature "Sign in with Google with auto provision", type: :feature do
   background do
     allow(Errbit::Config).to receive(:google_authentication).and_return(true)
     allow(Errbit::Config).to receive(:google_auto_provision).and_return(true)
@@ -40,7 +42,7 @@ RSpec.feature "Sign in with Google with auto provision" do
   end
 end
 
-RSpec.feature "Sign in with Google with domain validation" do
+RSpec.feature "Sign in with Google with domain validation", type: :feature do
   background do
     allow(Errbit::Config).to receive(:google_authentication).and_return(true)
     allow(Errbit::Config).to receive(:google_auto_provision).and_return(true)

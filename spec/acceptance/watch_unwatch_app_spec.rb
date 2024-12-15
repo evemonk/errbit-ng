@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
+require "rails_helper"
+
 require "acceptance/acceptance_helper"
 
-RSpec.feature "A user can watch and unwatch an application" do
+RSpec.feature "A user can watch and unwatch an application", type: :feature do
   let!(:app) { Fabricate(:app) }
   let!(:user) { Fabricate(:user) }
 
