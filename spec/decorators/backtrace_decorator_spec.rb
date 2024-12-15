@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-describe BacktraceDecorator, type: :decorator do
+RSpec.describe BacktraceDecorator, type: :decorator do
   let(:backtrace) do
     described_class.new(
       Backtrace.new(
