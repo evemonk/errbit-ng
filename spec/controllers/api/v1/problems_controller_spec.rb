@@ -31,13 +31,13 @@ describe Api::V1::ProblemsController, type: "controller" do
       it "should return the correct problem" do
         get :show, params: {auth_token: @user.authentication_token, format: "json", id: @problem.id}
 
-        returned_problem = JSON.parse(response.body)
+        returned_problem = response.parsed_body
         expect(returned_problem["_id"]).to eq(@problem.id.to_s)
       end
 
       it "should return only the correct fields" do
         get :show, params: {auth_token: @user.authentication_token, format: "json", id: @problem.id}
-        returned_problem = JSON.parse(response.body)
+        returned_problem = response.parsed_body
 
         expect(returned_problem.keys).to match_array([
           "app_name",

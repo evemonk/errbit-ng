@@ -23,7 +23,7 @@ describe Api::V3::NoticesController, type: :controller do
   it "returns created notice id in json format" do
     post :create, body: legit_body, params: {**legit_params}
     notice = Notice.last
-    expect(JSON.parse(response.body)).to eq(
+    expect(response.parsed_body).to eq(
       "id" => notice.id.to_s,
       "url" => notice.problem.url
     )

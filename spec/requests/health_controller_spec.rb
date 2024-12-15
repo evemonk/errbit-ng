@@ -21,7 +21,7 @@ describe HealthController, type: "request" do
       }
       get "/health/readiness"
       expect(response).to be_server_error
-      parsed_response = JSON.parse(response.body)
+      parsed_response = response.parsed_body
       expect(parsed_response["ok"]).to eq false
       expect(parsed_response["details"].first["check_name"]).to eq "mongo"
       expect(parsed_response["details"].first["ok"]).to eq false
@@ -40,14 +40,14 @@ describe HealthController, type: "request" do
     it "will let you know when the api_key is not valid" do
       get "/health/api-key-tester?api_key=garbagekey"
       expect(response).to be_forbidden
-      parsed_response = JSON.parse(response.body)
+      parsed_response = response.parsed_body
       expect(parsed_response["ok"]).to eq false
     end
 
     it "can let you know that the api_key is valid" do
       get "/health/api-key-tester?api_key=#{errbit_app.api_key}"
       expect(response).to be_successful
-      parsed_response = JSON.parse(response.body)
+      parsed_response = response.parsed_body
       expect(parsed_response["ok"]).to eq true
     end
   end
