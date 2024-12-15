@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-Rspec.describe ResolvedProblemClearer do
+RSpec.describe ResolvedProblemClearer do
   let(:resolved_problem_clearer) do
     ResolvedProblemClearer.new
   end
