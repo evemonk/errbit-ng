@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe ProblemDestroy do
   let(:problem_destroy) do
     ProblemDestroy.new(problem)

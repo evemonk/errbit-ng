@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe ApplicationHelper, type: :helper do
   let(:notice) { Fabricate(:notice) }
   describe "#generate_problem_ical" do

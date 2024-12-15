@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Fabricator :notification_service do
   app
   room_id { sequence :word }

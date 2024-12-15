@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe WatcherDecorator do
   describe "#email_choosen" do
     context "with email define" do

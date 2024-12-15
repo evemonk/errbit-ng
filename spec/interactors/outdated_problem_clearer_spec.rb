@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe OutdatedProblemClearer do
   before do
     allow(Errbit::Config).to receive(:notice_deprecation_days).and_return(7)

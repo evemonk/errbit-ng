@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe ProblemsHelper, type: :helper do
   describe "#auto_link_format" do
     if !jruby?

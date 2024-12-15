@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe IssueTrackerDecorator do
   let(:fake_tracker) do
     klass = Class.new(ErrbitPlugin::IssueTracker) do

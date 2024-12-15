@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe IssueTrackerFieldDecorator do
   describe "#label" do
     it "return the label of field_info by default" do

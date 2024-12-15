@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe "initializers/action_mailer" do
   def load_initializer
     load File.join(Rails.root, "config", "initializers", "action_mailer.rb")
