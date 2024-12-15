@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe "apps/show.atom.builder", type: "view" do
+RSpec.describe "apps/show.atom.builder", type: :view do
   let(:notice) { Fabricate(:notice) }
   let(:app) { notice.app }
   let(:problems) { [notice.problem] }

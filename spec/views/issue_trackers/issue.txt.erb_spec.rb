@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe "issue_trackers/issue.txt.erb", type: "view" do
+RSpec.describe "issue_trackers/issue.txt.erb", type: :view do
   let(:problem) do
     problem = Fabricate(:problem)
     Fabricate(:notice, err: Fabricate(:err, problem: problem))

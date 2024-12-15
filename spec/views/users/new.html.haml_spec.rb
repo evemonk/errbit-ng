@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe "users/new.html.haml", type: "view" do
+RSpec.describe "users/new.html.haml", type: :view do
   let(:user) { stub_model(User) }
   before do
     allow(view).to receive(:current_user).and_return(user)
