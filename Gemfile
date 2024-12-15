@@ -90,10 +90,6 @@ group :test do
   gem "super_diff"
 end
 
-group :no_docker, :test, :development do
-  gem "mini_racer", platform: :ruby # C Ruby (MRI) or Rubinius, but NOT Windows
-end
-
 gem "puma"
 gem "sass-rails"
 gem "uglifier"
