@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-describe WatcherDecorator do
+require "rails_helper"
+
+describe WatcherDecorator, type: :decorator do
   describe "#email_choosen" do
     context "with email define" do
       it "return blank" do

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-describe IssueTrackerDecorator do
+require "rails_helper"
+
+describe IssueTrackerDecorator, type: :decorator do
   let(:fake_tracker_class) do
     klass = Class.new(ErrbitPlugin::IssueTracker) do
       def self.label
