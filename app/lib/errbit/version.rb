@@ -21,6 +21,4 @@ module Errbit
       source_version[0...8] if source_version.present?
     end
   end
-
-  VERSION = Version.new("0.10.0", true).full_version
 end
