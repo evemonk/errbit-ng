@@ -34,5 +34,6 @@ jobs:
         with:
           mongodb-version: ${{ matrix.mongodb-version }}
       - run: bin/rails zeitwerk:check
+      - run: bin/rails assets:precompile
       - run: bin/rake errbit:bootstrap
       - run: bin/rspec
