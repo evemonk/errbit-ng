@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-describe NotificationServices::GtalkService do
+RSpec.describe NotificationServices::GtalkService do
   it "it should send a notification to gtalk" do
     notice = Fabricate :notice
     notice.problem
