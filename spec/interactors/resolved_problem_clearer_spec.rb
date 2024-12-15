@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-describe ResolvedProblemClearer do
+require "rails_helper"
+
+Rspec.describe ResolvedProblemClearer do
   let(:resolved_problem_clearer) do
     ResolvedProblemClearer.new
   end

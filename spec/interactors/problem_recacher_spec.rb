@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-describe ProblemRecacher do
+require "rails_helper"
+
+RSpec.describe ProblemRecacher do
   let(:app) { Fabricate(:app) }
   let(:backtrace) do
     Fabricate(:backtrace)

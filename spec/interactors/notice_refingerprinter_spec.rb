@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-describe NoticeRefingerprinter do
+require "rails_helper"
+
+RSpec.describe NoticeRefingerprinter do
   let(:app) { Fabricate(:app) }
   let(:backtrace) do
     Fabricate(:backtrace)

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-describe "initializers/action_mailer" do
+require "rails_helper"
+
+RSpec.describe "initializers/action_mailer" do
   def load_initializer
     load Rails.root.join("config/initializers/action_mailer.rb").to_s
   end

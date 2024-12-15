@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-describe "initializers/devise" do
+require "rails_helper"
+
+RSpec.describe "initializers/devise" do
   def load_initializer
     load Rails.root.join("config/initializers/devise.rb").to_s
   end
