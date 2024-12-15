@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "rails_helper"
+
 RSpec.describe Backtrace, type: :model do
   describe ".find_or_create" do
     let(:lines) do

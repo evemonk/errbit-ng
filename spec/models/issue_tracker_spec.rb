@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "rails_helper"
+
 RSpec.describe IssueTracker, type: :model do
   describe "Association" do
     it { is_expected.to be_embedded_in(:app) }

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "rails_helper"
+
 Fabrication::Config.fabricator_path.each do |folder|
   Dir.glob(Rails.root.join(folder, "**", "*.rb").to_s).each do |file|
     require file
