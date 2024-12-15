@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-describe Api::V1::NoticesController, type: "controller" do
+require "rails_helper"
+
+RSpec.describe Api::V1::NoticesController, type: :controller do
   context "when logged in" do
     before do
       @user = Fabricate(:user)

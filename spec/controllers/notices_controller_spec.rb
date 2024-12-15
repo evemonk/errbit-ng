@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-describe NoticesController, type: "controller" do
+require "rails_helper"
+
+RSpec.describe NoticesController, type: :controller do
   it_requires_authentication for: {locate: :get}
 
   let(:notice) { Fabricate(:notice) }

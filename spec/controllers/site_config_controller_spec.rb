@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-describe SiteConfigController, type: "controller" do
+require "rails_helper"
+
+RSpec.describe SiteConfigController, type: :controller do
   it_requires_admin_privileges for: {
     index: :get,
     update: :put

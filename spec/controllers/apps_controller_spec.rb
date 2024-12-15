@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-describe AppsController, type: "controller" do
+require "rails_helper"
+
+RSpec.describe AppsController, type: :controller do
   it_requires_authentication
   it_requires_admin_privileges for: {new: :get, edit: :get, create: :post, update: :put, destroy: :delete}
 

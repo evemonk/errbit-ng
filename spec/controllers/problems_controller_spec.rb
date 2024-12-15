@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-describe ProblemsController, type: "controller" do
+require "rails_helper"
+
+RSpec.describe ProblemsController, type: :controller do
   it_requires_authentication for:    {
                                index: :get, show: :get, resolve: :put, search: :get
                              },
