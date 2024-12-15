@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe "apps/show.atom.builder", type: "view" do
   let(:notice) { Fabricate(:notice) }
   let(:app) { notice.app }

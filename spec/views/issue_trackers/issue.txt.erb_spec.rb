@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe "issue_trackers/issue.txt.erb", type: "view" do
   let(:problem) do
     problem = Fabricate(:problem)

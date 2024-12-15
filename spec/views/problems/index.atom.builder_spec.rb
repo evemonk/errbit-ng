@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe "problems/index.atom.builder", type: "view" do
   it "display problem message" do
     app = App.new(new_record: false)

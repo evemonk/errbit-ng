@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe "users/index.html.haml", type: "view" do
   let(:user) { stub_model(User) }
   before do
