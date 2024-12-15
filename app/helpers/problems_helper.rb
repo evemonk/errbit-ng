@@ -14,13 +14,13 @@ module ProblemsHelper
   end
 
   def gravatar_tag(email, options = {})
-    return unless email.present?
+    return if email.blank?
 
     image_tag gravatar_url(email, options), alt: email, class: "gravatar"
   end
 
   def gravatar_url(email, options = {})
-    return unless email.present?
+    return if email.blank?
 
     default_options = {
       d: Errbit::Config.gravatar_default
