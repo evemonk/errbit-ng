@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "rails_helper"
+
 RSpec.describe Problem, type: :model do
   context "validations" do
     it "requires an environment" do

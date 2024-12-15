@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "rails_helper"
+
 RSpec.describe NoticeFingerprinter, type: :model do
   let(:fingerprinter) { described_class.new }
   let(:notice) { Fabricate(:notice) }

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "rails_helper"
+
 RSpec.describe "notices/_user_attributes.html.haml", type: "view" do
   describe "autolink" do
     let(:notice) do

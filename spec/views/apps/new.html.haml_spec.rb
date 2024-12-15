@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "rails_helper"
+
 RSpec.describe "apps/new.html.haml", type: "view" do
   let(:app) { stub_model(App) }
   let(:app_decorate) { AppDecorator.new(app) }

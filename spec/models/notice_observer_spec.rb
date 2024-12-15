@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "rails_helper"
+
 RSpec.describe "Callback on Notice", type: :model do
   let(:notice_attrs_for) do
     lambda do |api_key|
