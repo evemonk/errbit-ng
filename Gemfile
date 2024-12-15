@@ -64,7 +64,7 @@ gem "mutex_m"
 gem "drb"
 
 group :development, :test do
-  gem "airbrake", "~> 4.3.5", require: false
+  gem "airbrake", "~> 13.0.5", require: false
   gem "rubocop", require: false
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
