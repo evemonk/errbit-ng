@@ -15,7 +15,7 @@ describe Api::V1::ProblemsController, type: "controller" do
 
       it "should return JSON if JSON is requested" do
         get :show, params: {auth_token: @user.authentication_token, format: "json", id: Problem.first.id}
-        expect { JSON.parse(response.body) }.not_to raise_error
+        expect { response.parsed_body }.not_to raise_error
       end
 
       it "should return XML if XML is requested" do
@@ -25,7 +25,7 @@ describe Api::V1::ProblemsController, type: "controller" do
 
       it "should return JSON by default" do
         get :show, params: {auth_token: @user.authentication_token, id: @problem.id}
-        expect { JSON.parse(response.body) }.not_to raise_error
+        expect { response.parsed_body }.not_to raise_error
       end
 
       it "should return the correct problem" do
@@ -70,7 +70,7 @@ describe Api::V1::ProblemsController, type: "controller" do
 
       it "should return JSON if JSON is requested" do
         get :index, params: {auth_token: @user.authentication_token, format: "json"}
-        expect { JSON.parse(response.body) }.not_to raise_error
+        expect { response.parsed_body }.not_to raise_error
       end
 
       it "should return XML if XML is requested" do
@@ -80,14 +80,14 @@ describe Api::V1::ProblemsController, type: "controller" do
 
       it "should return JSON by default" do
         get :index, params: {auth_token: @user.authentication_token}
-        expect { JSON.parse(response.body) }.not_to raise_error
+        expect { response.parsed_body }.not_to raise_error
       end
 
       describe "given a date range" do
         it "should return only the problems open during the date range" do
           get :index, params: {auth_token: @user.authentication_token, start_date: "2012-08-20", end_date: "2012-08-27"}
           expect(response).to be_successful
-          problems = JSON.parse response.body
+          problems = response.parsed_body
           expect(problems.length).to eq 2
         end
       end
@@ -95,7 +95,7 @@ describe Api::V1::ProblemsController, type: "controller" do
       it "should return all problems" do
         get :index, params: {auth_token: @user.authentication_token}
         expect(response).to be_successful
-        problems = JSON.parse response.body
+        problems = response.parsed_body
         expect(problems.length).to eq 4
       end
     end
