@@ -274,10 +274,10 @@ class Problem
     bucket_times = Array.new(buckets) { |ii| (since + ii.send(group_by)).send(ruby_time_method) }
     bucket_times.to_a.map do |bucket_time|
       count = if (data_for_day = non_zero_filled.detect { |item| item.dig("_id", group_by) == bucket_time })
-                data_for_day["count"]
-              else
-                0
-              end
+        data_for_day["count"]
+      else
+        0
+      end
       {bucket_time => count}
     end
   end
@@ -314,7 +314,7 @@ class Problem
   def issue_type
     # Return issue_type if configured, but fall back to detecting app's issue tracker
     attributes["issue_type"] ||=
-    (app.issue_tracker_configured? && app.issue_tracker.type_tracker) || nil
+      (app.issue_tracker_configured? && app.issue_tracker.type_tracker) || nil
   end
 
   # view helpers
