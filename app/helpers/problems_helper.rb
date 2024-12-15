@@ -7,7 +7,7 @@ module ProblemsHelper
 
   def auto_link_format(body)
     sanitize(
-      auto_link(simple_format(body), :all, target: "_blank").html_safe, # rubocop:disable Rails/OutputSafety
+      auto_link(simple_format(body), :all, target: "_blank").html_safe,
       tags: ["a", "p"],
       attributes: ["href", "target"]
     )
