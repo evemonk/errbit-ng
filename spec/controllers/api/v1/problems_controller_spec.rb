@@ -62,8 +62,8 @@ describe Api::V1::ProblemsController, type: "controller" do
 
     describe "GET /api/v1/problems" do
       before do
-        Fabricate(:problem, first_notice_at: Date.new(2012, 8, 01), resolved_at: Date.new(2012, 8, 02))
-        Fabricate(:problem, first_notice_at: Date.new(2012, 8, 01), resolved_at: Date.new(2012, 8, 21))
+        Fabricate(:problem, first_notice_at: Date.new(2012, 8, 1), resolved_at: Date.new(2012, 8, 2))
+        Fabricate(:problem, first_notice_at: Date.new(2012, 8, 1), resolved_at: Date.new(2012, 8, 21))
         Fabricate(:problem, first_notice_at: Date.new(2012, 8, 21))
         Fabricate(:problem, first_notice_at: Date.new(2012, 8, 30))
       end
