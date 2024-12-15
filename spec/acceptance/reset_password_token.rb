@@ -2,7 +2,7 @@
 
 require "acceptance/acceptance_helper"
 
-feature "password reset token" do
+RSpec.feature "password reset token" do
   let(:user) { Fabricate :user }
 
   scenario "receives correct password reset token" do

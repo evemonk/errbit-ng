@@ -2,7 +2,7 @@
 
 require "acceptance/acceptance_helper"
 
-feature "Sign in with Google" do
+RSpec.feature "Sign in with Google" do
   background do
     allow(Errbit::Config).to receive(:google_authentication).and_return(true)
     Fabricate(:user, google_uid: "nashby")
@@ -24,7 +24,7 @@ feature "Sign in with Google" do
   end
 end
 
-feature "Sign in with Google with auto provision" do
+RSpec.feature "Sign in with Google with auto provision" do
   background do
     allow(Errbit::Config).to receive(:google_authentication).and_return(true)
     allow(Errbit::Config).to receive(:google_auto_provision).and_return(true)
@@ -40,7 +40,7 @@ feature "Sign in with Google with auto provision" do
   end
 end
 
-feature "Sign in with Google with domain validation" do
+RSpec.feature "Sign in with Google with domain validation" do
   background do
     allow(Errbit::Config).to receive(:google_authentication).and_return(true)
     allow(Errbit::Config).to receive(:google_auto_provision).and_return(true)

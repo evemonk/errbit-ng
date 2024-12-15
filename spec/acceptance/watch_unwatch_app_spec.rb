@@ -2,7 +2,7 @@
 
 require "acceptance/acceptance_helper"
 
-feature "A user can watch and unwatch an application" do
+RSpec.feature "A user can watch and unwatch an application" do
   let!(:app) { Fabricate(:app) }
   let!(:user) { Fabricate(:user) }
 
