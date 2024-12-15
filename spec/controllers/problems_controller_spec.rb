@@ -96,7 +96,7 @@ describe ProblemsController, type: "controller" do
   describe "GET /problems/search" do
     before do
       sign_in user
-      @app      = Fabricate(:app)
+      @app = Fabricate(:app)
       @problem1 = Fabricate(:problem, app: @app, message: "Most important")
       @problem2 = Fabricate(:problem, app: @app, message: "Very very important")
     end
@@ -458,7 +458,7 @@ describe ProblemsController, type: "controller" do
     describe "POST /apps/:app_id/problems/destroy_all" do
       before do
         sign_in user
-        @app      = Fabricate(:app)
+        @app = Fabricate(:app)
         @problem1 = Fabricate(:problem, app: @app)
         @problem2 = Fabricate(:problem, app: @app)
       end
